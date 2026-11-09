@@ -22,6 +22,7 @@ All changes included in 1.12:
 
 - ([#9606](https://github.com/quarto-dev/quarto-cli/issues/9606)): Fix `format-links` entries written as `{format, text}` adding a second, default link for the same format instead of renaming its link.
 - ([#15269](https://github.com/quarto-dev/quarto-cli/pull/15269)): Fix `link-external-newwindow` overriding a `target` set explicitly on a link. (author: @mcanouil)
+- ([#PRNUMBER](https://github.com/quarto-dev/quarto-cli/pull/PRNUMBER)): Support Pandoc's `--math-method` option in `quarto render`, so that `--math-method=katex` works with `--embed-resources` and keeps math intact in `llms.md` output, like `--katex` does.
 
 ### `pdf`
 
