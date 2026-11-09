@@ -10,6 +10,7 @@ All changes included in 1.12:
 - Update `pandoc` to 3.13
   - ([jgm/pandoc#11540](https://github.com/jgm/pandoc/issues/11540)): Horizontal rules (`---`) in Typst output are now full-width, following Pandoc 3.13's use of Typst 0.15's native `divider` element, instead of the previous centered half-width line. Restyle them with `#show divider: set line(stroke: 2pt)` in a raw Typst block or a custom template. A Typst binary set through `QUARTO_TYPST` must now be version 0.15 or later.
   - ([jgm/pandoc#11831](https://github.com/jgm/pandoc/pull/11831)): HTML documents using `theme: pandoc` pick up Pandoc 3.13's style updates. Links now inherit the surrounding text color unless `linkcolor` is set, horizontal rules and table borders follow the text color, and printed output drops backgrounds and the fixed 12pt font size, rendering at the 11pt print size used by other Quarto HTML themes. Pandoc 3.13's automatic dark mode is not enabled for `theme: pandoc`.
+  - ([jgm/pandoc@c73a35a](https://github.com/jgm/pandoc/commit/c73a35a2e7ed1144132f1e533b4f0ae4c3648143)): Support Pandoc's `--math-method` option in `quarto render`, so that `--math-method=katex` works with `--embed-resources` and keeps math intact in `llms.md` output, like `--katex` does.
 
 ## Accessibility
 
@@ -22,8 +23,6 @@ All changes included in 1.12:
 
 - ([#9606](https://github.com/quarto-dev/quarto-cli/issues/9606)): Fix `format-links` entries written as `{format, text}` adding a second, default link for the same format instead of renaming its link.
 - ([#15269](https://github.com/quarto-dev/quarto-cli/pull/15269)): Fix `link-external-newwindow` overriding a `target` set explicitly on a link. (author: @mcanouil)
-- ([#PRNUMBER](https://github.com/quarto-dev/quarto-cli/pull/PRNUMBER)): Support Pandoc's `--math-method` option in `quarto render`, so that `--math-method=katex` works with `--embed-resources` and keeps math intact in `llms.md` output, like `--katex` does.
-
 ### `pdf`
 
 - ([#15251](https://github.com/quarto-dev/quarto-cli/pull/15251)): Fix algorithm blocks (`#alg-`) being set in italics. Their body is now upright, like definitions, examples and exercises. (author: @mcanouil)
